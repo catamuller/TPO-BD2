@@ -1,4 +1,4 @@
-db.cliente.aggregate([
+const result = db.cliente.aggregate([
     {
         $project: {
             nro_cliente: "$_id",
@@ -11,3 +11,5 @@ db.cliente.aggregate([
         }
     }
 ]);
+
+printjson(result.toArray());
