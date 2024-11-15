@@ -3,6 +3,9 @@
     "dockerComposeFile": "docker-compose.yml",
     "service": "app",
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "features": {
+        "ghcr.io/devcontainers-extra/features/prettier:1": {}
+    },
     "customizations": {
         "vscode": {
             "settings": {
@@ -11,6 +14,7 @@
             "extensions": [
                 "mongodb.mongodb-vscode",
                 "redis.redis-for-vscode",
+                "esbenp.prettier-vscode",
                 "editorconfig.editorconfig"
             ]
         }
