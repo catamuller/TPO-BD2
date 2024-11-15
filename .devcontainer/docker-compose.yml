@@ -15,20 +15,29 @@ services:
       - MONGO_DB_NAME=library
       - MONGO_PORT=27017
       - MONGO_HOST=mongo
-    network_mode:
-      - service:mongo
-      - service:redis
+    networks:
+      - dbs_network
+
   mongo:
     image: mongo:latest
     restart: unless-stopped
     volumes:
       - mongodb-data:/data/mongo
+    networks:
+      - dbs_network
+
   redis:
     image: redis:7.2-alpine
     restart: unless-stopped
     volumes:
       - redis-data:/data/redis
+    networks:
+      - dbs_network
 
 volumes:
   mongodb-data:
   redis-data:
+
+networks:
+  dbs_network:
+    driver: bridge
