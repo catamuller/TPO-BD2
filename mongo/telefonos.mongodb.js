@@ -1,3 +1,6 @@
+// @ts-nocheck
+/* global use, db */
+
 db.telefono.insertOne({
 	"codigo_area": 115,
 	"nro_telefono": 4573879,

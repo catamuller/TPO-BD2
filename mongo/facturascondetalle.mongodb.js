@@ -1,3 +1,6 @@
+// @ts-nocheck
+/* global use, db */
+
 db.factura.insertOne({
 	_id: 1,
 	"fecha": "2016-05-28",

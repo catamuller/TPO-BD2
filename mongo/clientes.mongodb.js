@@ -1,3 +1,6 @@
+// @ts-nocheck
+/* global use, db */
+
 db.cliente.insertOne({
 	_id: 1,
 	"nombre": "Xerxes",
