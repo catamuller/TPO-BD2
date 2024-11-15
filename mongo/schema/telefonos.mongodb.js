@@ -1,6 +1,8 @@
 // @ts-nocheck
 /* global use, db */
 
+db.telefono.createIndex({ "codigo_area": 1, "nro_telefono": 1 }, { unique: true });
+
 db.telefono.insertOne({
 	"codigo_area": 115,
 	"nro_telefono": 4573879,
