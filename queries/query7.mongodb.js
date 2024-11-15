@@ -1,16 +1,21 @@
 db.factura.aggregate([
-   { 
+    {
         $lookup: {
             from: "cliente",
             foreignField: "_id",
             localField: "nro_cliente",
-            as: "info_cliente" 
+            as: "info_cliente"
         }
-   },
-   {
-    $unwind: "$info_cliente"
-   },
-    { $match: {"info_cliente.nombre": "Kai", "info_cliente.apellido": "Bullock"}},
+    },
+    {
+        $unwind: "$info_cliente"
+    },
+    {
+        $match: {
+            "info_cliente.nombre": "Kai",
+            "info_cliente.apellido": "Bullock"
+        }
+    },
     {
         $project: {
             _id: 1,
