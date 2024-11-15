@@ -1,399 +1,399 @@
 HSET producto:1 marca "Dolor Sit Incorporated" nombre "return policy" descripcion "risus. In mi" precio 443.88 stock 404
 LPUSH "marca:Dolor Sit Incorporated" 1
-LPUSH all 1
+SADD all 1
 
 HSET producto:2 marca "A Felis Ullamcorper Company" nombre "sales tax" descripcion "Nunc mauris elit," precio 192.64 stock 854
 LPUSH "marca:A Felis Ullamcorper Company" 2
-LPUSH all 2
+SADD all 2
 
 HSET producto:3 marca "Elit A Corp." nombre "household goods" descripcion "nec, euismod in," precio 554.79 stock 123
 LPUSH "marca:Elit A Corp." 3
-LPUSH all 3
+SADD all 3
 
 HSET producto:4 marca "Maecenas Libero Est PC" nombre "pet supplies" descripcion "lorem, luctus ut," precio 458.81 stock 39
 LPUSH "marca:Maecenas Libero Est PC" 4
-LPUSH all 4
+SADD all 4
 
 HSET producto:5 marca "Odio Corp." nombre "scales" descripcion "molestie arcu. Sed" precio 193.02 stock 679
 LPUSH "marca:Odio Corp." 5
-LPUSH all 5
+SADD all 5
 
 HSET producto:6 marca "Et Risus Quisque LLC" nombre "coin" descripcion "vestibulum massa rutrum" precio 835.23 stock 236
 LPUSH "marca:Et Risus Quisque LLC" 6
-LPUSH all 6
+SADD all 6
 
 HSET producto:7 marca "Odio Auctor Incorporated" nombre "price" descripcion "Praesent interdum ligula" precio 184.47 stock 869
 LPUSH "marca:Odio Auctor Incorporated" 7
-LPUSH all 7
+SADD all 7
 
 HSET producto:8 marca "Elit Pellentesque Consulting" nombre "meat" descripcion "ante, iaculis nec," precio 724.35 stock 899
 LPUSH "marca:Elit Pellentesque Consulting" 8
-LPUSH all 8
+SADD all 8
 
 HSET producto:9 marca "Posuere LLP" nombre "pet supplies" descripcion "rutrum magna. Cras" precio 184.12 stock 312
 LPUSH "marca:Posuere LLP" 9
-LPUSH all 9
+SADD all 9
 
 HSET producto:10 marca "Lobortis Nisi Nibh Consulting" nombre "credit card" descripcion "Ut tincidunt vehicula" precio 613.74 stock 611
 LPUSH "marca:Lobortis Nisi Nibh Consulting" 10
-LPUSH all 10
+SADD all 10
 
 HSET producto:11 marca "Erat Institute" nombre "bakery" descripcion "Suspendisse aliquet molestie" precio 794.93 stock 73
 LPUSH "marca:Erat Institute" 11
-LPUSH all 11
+SADD all 11
 
 HSET producto:12 marca "Aptent Taciti Incorporated" nombre "fish" descripcion "urna convallis erat," precio 943.44 stock 498
 LPUSH "marca:Aptent Taciti Incorporated" 12
-LPUSH all 12
+SADD all 12
 
 HSET producto:13 marca "Fusce Diam Nunc Ltd" nombre "pet supplies" descripcion "tristique senectus et" precio 300.9 stock 391
 LPUSH "marca:Fusce Diam Nunc Ltd" 13
-LPUSH all 13
+SADD all 13
 
 HSET producto:14 marca "Sit Corporation" nombre "meat" descripcion "nec ligula consectetuer" precio 289.23 stock 595
 LPUSH "marca:Sit Corporation" 14
-LPUSH all 14
+SADD all 14
 
 HSET producto:15 marca "Ligula Aliquam Incorporated" nombre "trolley" descripcion "ac mattis ornare," precio 469.83 stock 881
 LPUSH "marca:Ligula Aliquam Incorporated" 15
-LPUSH all 15
+SADD all 15
 
 HSET producto:16 marca "Vel Foundation" nombre "nutritional information" descripcion "turpis. Nulla aliquet." precio 840.71 stock 150
 LPUSH "marca:Vel Foundation" 16
-LPUSH all 16
+SADD all 16
 
 HSET producto:17 marca "Luctus Vulputate Corp." nombre "sales assistant" descripcion "sit amet massa." precio 876.47 stock 628
 LPUSH "marca:Luctus Vulputate Corp." 17
-LPUSH all 17
+SADD all 17
 
 HSET producto:18 marca "Vitae Foundation" nombre "receipt" descripcion "magnis dis parturient" precio 349.82 stock 931
 LPUSH "marca:Vitae Foundation" 18
-LPUSH all 18
+SADD all 18
 
 HSET producto:19 marca "Amet Consectetuer Industries" nombre "receipt" descripcion "mollis. Phasellus libero" precio 908.77 stock 408
 LPUSH "marca:Amet Consectetuer Industries" 19
-LPUSH all 19
+SADD all 19
 
 HSET producto:20 marca "Auctor Corporation" nombre "half price" descripcion "dictum placerat, augue." precio 946.39 stock 408
 LPUSH "marca:Auctor Corporation" 20
-LPUSH all 20
+SADD all 20
 
 HSET producto:21 marca "Arcu Vestibulum Ut Consulting" nombre "household goods" descripcion "Quisque purus sapien," precio 342.01 stock 314
 LPUSH "marca:Arcu Vestibulum Ut Consulting" 21
-LPUSH all 21
+SADD all 21
 
 HSET producto:22 marca "Eu Accumsan Sed Consulting" nombre "barcode" descripcion "magnis dis parturient" precio 667.36 stock 315
 LPUSH "marca:Eu Accumsan Sed Consulting" 22
-LPUSH all 22
+SADD all 22
 
 HSET producto:23 marca "Quam Industries" nombre "groceries" descripcion "tellus eu augue" precio 460.0 stock 115
 LPUSH "marca:Quam Industries" 23
-LPUSH all 23
+SADD all 23
 
 HSET producto:24 marca "Enim Associates" nombre "" descripcion "eu elit. Nulla" precio 835.86 stock 405
 LPUSH "marca:Enim Associates" 24
-LPUSH all 24
+SADD all 24
 
 HSET producto:25 marca "Dis Parturient Montes Consulting" nombre "bag" descripcion "Curabitur dictum. Phasellus" precio 67.85 stock 339
 LPUSH "marca:Dis Parturient Montes Consulting" 25
-LPUSH all 25
+SADD all 25
 
 HSET producto:26 marca "Lectus Corporation" nombre " drugstore " descripcion "risus, at fringilla" precio 838.23 stock 73
 LPUSH "marca:Lectus Corporation" 26
-LPUSH all 26
+SADD all 26
 
 HSET producto:27 marca "Nec Tempus Foundation" nombre "credit card" descripcion "euismod mauris eu" precio 391.91 stock 517
 LPUSH "marca:Nec Tempus Foundation" 27
-LPUSH all 27
+SADD all 27
 
 HSET producto:28 marca "Vehicula Pellentesque LLP" nombre " drugstore " descripcion "Morbi sit amet" precio 815.23 stock 73
 LPUSH "marca:Vehicula Pellentesque LLP" 28
-LPUSH all 28
+SADD all 28
 
 HSET producto:29 marca "Convallis Ligula Donec Foundation" nombre "supervisor" descripcion "egestas lacinia. Sed" precio 58.44 stock 323
 LPUSH "marca:Convallis Ligula Donec Foundation" 29
-LPUSH all 29
+SADD all 29
 
 HSET producto:30 marca "Eu Lacus Consulting" nombre "fish" descripcion "vel nisl. Quisque" precio 713.17 stock 204
 LPUSH "marca:Eu Lacus Consulting" 30
-LPUSH all 30
+SADD all 30
 
 HSET producto:31 marca "Tempor Bibendum PC" nombre "refundable" descripcion "sit amet ornare" precio 441.95 stock 246
 LPUSH "marca:Tempor Bibendum PC" 31
-LPUSH all 31
+SADD all 31
 
 HSET producto:32 marca "Montes Nascetur Incorporated" nombre "cosmetics" descripcion "purus. Nullam scelerisque" precio 926.6 stock 203
 LPUSH "marca:Montes Nascetur Incorporated" 32
-LPUSH all 32
+SADD all 32
 
 HSET producto:33 marca "Turpis Nulla Corp." nombre " drugstore " descripcion "pede, nonummy ut," precio 472.49 stock 496
 LPUSH "marca:Turpis Nulla Corp." 33
-LPUSH all 33
+SADD all 33
 
 HSET producto:34 marca "Eu Eleifend Nec Associates" nombre "canned goods" descripcion "orci sem eget" precio 715.37 stock 676
 LPUSH "marca:Eu Eleifend Nec Associates" 34
-LPUSH all 34
+SADD all 34
 
 HSET producto:35 marca "Euismod Incorporated" nombre "chemist's " descripcion "enim. Nunc ut" precio 762.66 stock 139
 LPUSH "marca:Euismod Incorporated" 35
-LPUSH all 35
+SADD all 35
 
 HSET producto:36 marca "Congue A Aliquet Corp." nombre "sales assistant" descripcion "diam nunc, ullamcorper" precio 758.82 stock 778
 LPUSH "marca:Congue A Aliquet Corp." 36
-LPUSH all 36
+SADD all 36
 
 HSET producto:37 marca "Sed Dui Fusce LLC" nombre "coin" descripcion "eleifend nec, malesuada" precio 282.07 stock 954
 LPUSH "marca:Sed Dui Fusce LLC" 37
-LPUSH all 37
+SADD all 37
 
 HSET producto:38 marca "Arcu Incorporated" nombre "bag" descripcion "justo eu arcu." precio 53.83 stock 681
 LPUSH "marca:Arcu Incorporated" 38
-LPUSH all 38
+SADD all 38
 
 HSET producto:39 marca "Donec Ltd" nombre "fresh flowers" descripcion "vitae odio sagittis" precio 493.23 stock 578
 LPUSH "marca:Donec Ltd" 39
-LPUSH all 39
+SADD all 39
 
 HSET producto:40 marca "Dolor Dolor Tempus Ltd" nombre "check-out counter" descripcion "Nullam lobortis quam" precio 261.33 stock 582
 LPUSH "marca:Dolor Dolor Tempus Ltd" 40
-LPUSH all 40
+SADD all 40
 
 HSET producto:41 marca "Massa Integer Vitae Company" nombre "change" descripcion "mollis non, cursus" precio 156.03 stock 142
 LPUSH "marca:Massa Integer Vitae Company" 41
-LPUSH all 41
+SADD all 41
 
 HSET producto:42 marca "Proin LLP" nombre "on sale" descripcion "nibh dolor, nonummy" precio 96.03 stock 446
 LPUSH "marca:Proin LLP" 42
-LPUSH all 42
+SADD all 42
 
 HSET producto:43 marca "Amet Institute" nombre "shopping cart" descripcion "id magna et" precio 287.84 stock 214
 LPUSH "marca:Amet Institute" 43
-LPUSH all 43
+SADD all 43
 
 HSET producto:44 marca "Nec Inc." nombre "on sale" descripcion "penatibus et magnis" precio 560.95 stock 92
 LPUSH "marca:Nec Inc." 44
-LPUSH all 44
+SADD all 44
 
 HSET producto:45 marca "Ultricies Foundation" nombre "check-out counter" descripcion "Praesent luctus. Curabitur" precio 749.66 stock 392
 LPUSH "marca:Ultricies Foundation" 45
-LPUSH all 45
+SADD all 45
 
 HSET producto:46 marca "Sed Dictum LLC" nombre "fridge" descripcion "Nunc ac sem" precio 418.23 stock 636
 LPUSH "marca:Sed Dictum LLC" 46
-LPUSH all 46
+SADD all 46
 
 HSET producto:47 marca "Scelerisque Institute" nombre "shopping cart" descripcion "sapien. Cras dolor" precio 8.12 stock 960
 LPUSH "marca:Scelerisque Institute" 47
-LPUSH all 47
+SADD all 47
 
 HSET producto:48 marca "Arcu Morbi PC" nombre "aisle" descripcion "dignissim tempor arcu." precio 238.07 stock 158
 LPUSH "marca:Arcu Morbi PC" 48
-LPUSH all 48
+SADD all 48
 
 HSET producto:49 marca "Velit Pellentesque Industries" nombre "ticket" descripcion "Suspendisse sagittis. Nullam" precio 453.92 stock 393
 LPUSH "marca:Velit Pellentesque Industries" 49
-LPUSH all 49
+SADD all 49
 
 HSET producto:50 marca "Pede Malesuada Associates" nombre "credit card" descripcion "pede blandit congue." precio 113.98 stock 359
 LPUSH "marca:Pede Malesuada Associates" 50
-LPUSH all 50
+SADD all 50
 
 HSET producto:51 marca "Mi Pede Nonummy LLC" nombre "household goods" descripcion "lectus ante dictum" precio 567.19 stock 427
 LPUSH "marca:Mi Pede Nonummy LLC" 51
-LPUSH all 51
+SADD all 51
 
 HSET producto:52 marca "Ornare Lectus Justo PC" nombre "freezer" descripcion "a tortor. Nunc" precio 420.78 stock 668
 LPUSH "marca:Ornare Lectus Justo PC" 52
-LPUSH all 52
+SADD all 52
 
 HSET producto:53 marca "Justo Nec Foundation" nombre "groceries" descripcion "rhoncus. Nullam velit" precio 235.83 stock 775
 LPUSH "marca:Justo Nec Foundation" 53
-LPUSH all 53
+SADD all 53
 
 HSET producto:54 marca "Ipsum Curabitur LLP" nombre "banknote" descripcion "fringilla. Donec feugiat" precio 606.65 stock 759
 LPUSH "marca:Ipsum Curabitur LLP" 54
-LPUSH all 54
+SADD all 54
 
 HSET producto:55 marca "A Purus Duis Limited" nombre "receipt" descripcion "pellentesque a, facilisis" precio 766.96 stock 831
 LPUSH "marca:A Purus Duis Limited" 55
-LPUSH all 55
+SADD all 55
 
 HSET producto:56 marca "Ad Litora Ltd" nombre "20% off" descripcion "Vivamus non lorem" precio 695.45 stock 888
 LPUSH "marca:Ad Litora Ltd" 56
-LPUSH all 56
+SADD all 56
 
 HSET producto:57 marca "Mauris Blandit Mattis Ltd" nombre "sales assistant" descripcion "mauris id sapien." precio 692.28 stock 50
 LPUSH "marca:Mauris Blandit Mattis Ltd" 57
-LPUSH all 57
+SADD all 57
 
 HSET producto:58 marca "In Consectetuer Ipsum Company" nombre "product" descripcion "fringilla. Donec feugiat" precio 270.84 stock 487
 LPUSH "marca:In Consectetuer Ipsum Company" 58
-LPUSH all 58
+SADD all 58
 
 HSET producto:59 marca "Ultricies LLP" nombre "manager" descripcion "Nunc mauris. Morbi" precio 872.29 stock 201
 LPUSH "marca:Ultricies LLP" 59
-LPUSH all 59
+SADD all 59
 
 HSET producto:60 marca "Egestas PC" nombre "packaging" descripcion "rhoncus. Nullam velit" precio 206.65 stock 405
 LPUSH "marca:Egestas PC" 60
-LPUSH all 60
+SADD all 60
 
 HSET producto:61 marca "Dui Corporation" nombre "bakery" descripcion "et malesuada fames" precio 277.03 stock 51
 LPUSH "marca:Dui Corporation" 61
-LPUSH all 61
+SADD all 61
 
 HSET producto:62 marca "Nulla Dignissim Institute" nombre "grand opening sale" descripcion "eu tempor erat" precio 500.85 stock 701
 LPUSH "marca:Nulla Dignissim Institute" 62
-LPUSH all 62
+SADD all 62
 
 HSET producto:63 marca "Mauris Sapien Corp." nombre "fish" descripcion "rutrum urna, nec" precio 794.63 stock 100
 LPUSH "marca:Mauris Sapien Corp." 63
-LPUSH all 63
+SADD all 63
 
 HSET producto:64 marca "Ligula Eu LLC" nombre "lift" descripcion "nec orci. Donec" precio 773.89 stock 320
 LPUSH "marca:Ligula Eu LLC" 64
-LPUSH all 64
+SADD all 64
 
 HSET producto:65 marca "Arcu Vestibulum Ante Limited" nombre "meat" descripcion "elit. Nulla facilisi." precio 325.7 stock 609
 LPUSH "marca:Arcu Vestibulum Ante Limited" 65
-LPUSH all 65
+SADD all 65
 
 HSET producto:66 marca "Egestas Incorporated" nombre "price" descripcion "est ac facilisis" precio 554.45 stock 568
 LPUSH "marca:Egestas Incorporated" 66
-LPUSH all 66
+SADD all 66
 
 HSET producto:67 marca "Nibh Dolor Company" nombre "fruit" descripcion "amet, faucibus ut," precio 197.1 stock 297
 LPUSH "marca:Nibh Dolor Company" 67
-LPUSH all 67
+SADD all 67
 
 HSET producto:68 marca "Lacus Nulla Tincidunt Inc." nombre "refundable" descripcion "ut quam vel" precio 607.52 stock 757
 LPUSH "marca:Lacus Nulla Tincidunt Inc." 68
-LPUSH all 68
+SADD all 68
 
 HSET producto:69 marca "Quam Dignissim Limited" nombre "fresh flowers" descripcion "sapien, cursus in," precio 501.26 stock 416
 LPUSH "marca:Quam Dignissim Limited" 69
-LPUSH all 69
+SADD all 69
 
 HSET producto:70 marca "Quis Massa Foundation" nombre "lift" descripcion "lorem, auctor quis," precio 658.13 stock 475
 LPUSH "marca:Quis Massa Foundation" 70
-LPUSH all 70
+SADD all 70
 
 HSET producto:71 marca "Ipsum Donec Sollicitudin Corporation" nombre "customer" descripcion "Phasellus libero mauris," precio 814.4 stock 587
 LPUSH "marca:Ipsum Donec Sollicitudin Corporation" 71
-LPUSH all 71
+SADD all 71
 
 HSET producto:72 marca "Metus Company" nombre "fruit" descripcion "sed pede. Cum" precio 801.99 stock 952
 LPUSH "marca:Metus Company" 72
-LPUSH all 72
+SADD all 72
 
 HSET producto:73 marca "Lobortis Tellus LLP" nombre "guarantee" descripcion "ut nisi a" precio 504.62 stock 526
 LPUSH "marca:Lobortis Tellus LLP" 73
-LPUSH all 73
+SADD all 73
 
 HSET producto:74 marca "Tincidunt Industries" nombre "manager" descripcion "in, tempus eu," precio 302.67 stock 242
 LPUSH "marca:Tincidunt Industries" 74
-LPUSH all 74
+SADD all 74
 
 HSET producto:75 marca "Aliquam Auctor Associates" nombre "groceries" descripcion "a, arcu. Sed" precio 187.51 stock 293
 LPUSH "marca:Aliquam Auctor Associates" 75
-LPUSH all 75
+SADD all 75
 
 HSET producto:76 marca "Morbi Neque Tellus Incorporated" nombre "ticket" descripcion "non magna. Nam" precio 903.9 stock 423
 LPUSH "marca:Morbi Neque Tellus Incorporated" 76
-LPUSH all 76
+SADD all 76
 
 HSET producto:77 marca "Netus Et Malesuada PC" nombre "check-out counter" descripcion "ac facilisis facilisis," precio 121.81 stock 211
 LPUSH "marca:Netus Et Malesuada PC" 77
-LPUSH all 77
+SADD all 77
 
 HSET producto:78 marca "Augue Eu Ltd" nombre "beverages" descripcion "Quisque purus sapien," precio 630.96 stock 498
 LPUSH "marca:Augue Eu Ltd" 78
-LPUSH all 78
+SADD all 78
 
 HSET producto:79 marca "Nec Cursus Inc." nombre "till" descripcion "et magnis dis" precio 897.0 stock 847
 LPUSH "marca:Nec Cursus Inc." 79
-LPUSH all 79
+SADD all 79
 
 HSET producto:80 marca "Suspendisse Tristique Company" nombre "guarantee" descripcion "nec urna et" precio 686.99 stock 869
 LPUSH "marca:Suspendisse Tristique Company" 80
-LPUSH all 80
+SADD all 80
 
 HSET producto:81 marca "Vehicula Pellentesque Company" nombre "20% off" descripcion "risus. Donec nibh" precio 518.92 stock 212
 LPUSH "marca:Vehicula Pellentesque Company" 81
-LPUSH all 81
+SADD all 81
 
 HSET producto:82 marca "Morbi Consulting" nombre "nutritional information" descripcion "nascetur ridiculus mus." precio 186.34 stock 855
 LPUSH "marca:Morbi Consulting" 82
-LPUSH all 82
+SADD all 82
 
 HSET producto:83 marca "Natoque Penatibus LLC" nombre "sales tax" descripcion "eget odio. Aliquam" precio 539.18 stock 808
 LPUSH "marca:Natoque Penatibus LLC" 83
-LPUSH all 83
+SADD all 83
 
 HSET producto:84 marca "Suspendisse Eleifend Cras Limited" nombre "cheque" descripcion "blandit congue. In" precio 289.06 stock 70
 LPUSH "marca:Suspendisse Eleifend Cras Limited" 84
-LPUSH all 84
+SADD all 84
 
 HSET producto:85 marca "In Faucibus Inc." nombre "return policy" descripcion "ultrices, mauris ipsum" precio 706.33 stock 992
 LPUSH "marca:In Faucibus Inc." 85
-LPUSH all 85
+SADD all 85
 
 HSET producto:86 marca "Cras Ltd" nombre "fresh flowers" descripcion "ultrices, mauris ipsum" precio 848.49 stock 44
 LPUSH "marca:Cras Ltd" 86
-LPUSH all 86
+SADD all 86
 
 HSET producto:87 marca "Enim Nisl Institute" nombre "barcode reader" descripcion "turpis egestas. Fusce" precio 495.94 stock 525
 LPUSH "marca:Enim Nisl Institute" 87
-LPUSH all 87
+SADD all 87
 
 HSET producto:88 marca "Ornare Tortor Inc." nombre "change" descripcion "auctor vitae, aliquet" precio 554.92 stock 979
 LPUSH "marca:Ornare Tortor Inc." 88
-LPUSH all 88
+SADD all 88
 
 HSET producto:89 marca "Curabitur Ut Corporation" nombre "fruit" descripcion "risus. Donec nibh" precio 666.28 stock 859
 LPUSH "marca:Curabitur Ut Corporation" 89
-LPUSH all 89
+SADD all 89
 
 HSET producto:90 marca "Purus Ac Tellus LLC" nombre "delicatessen" descripcion "magna a tortor." precio 680.41 stock 81
 LPUSH "marca:Purus Ac Tellus LLC" 90
-LPUSH all 90
+SADD all 90
 
 HSET producto:91 marca "Neque Incorporated" nombre "refundable" descripcion "iaculis nec, eleifend" precio 856.24 stock 207
 LPUSH "marca:Neque Incorporated" 91
-LPUSH all 91
+SADD all 91
 
 HSET producto:92 marca "At Auctor PC" nombre "trolley" descripcion "ipsum ac mi" precio 798.72 stock 46
 LPUSH "marca:At Auctor PC" 92
-LPUSH all 92
+SADD all 92
 
 HSET producto:93 marca "Egestas Ligula Inc." nombre "fruit" descripcion "purus. Maecenas libero" precio 224.28 stock 986
 LPUSH "marca:Egestas Ligula Inc." 93
-LPUSH all 93
+SADD all 93
 
 HSET producto:94 marca "Auctor Quis LLP" nombre "shopping basket" descripcion "nibh. Quisque nonummy" precio 340.28 stock 493
 LPUSH "marca:Auctor Quis LLP" 94
-LPUSH all 94
+SADD all 94
 
 HSET producto:95 marca "Accumsan Interdum Libero Inc." nombre "household goods" descripcion "ut, pellentesque eget," precio 312.53 stock 923
 LPUSH "marca:Accumsan Interdum Libero Inc." 95
-LPUSH all 95
+SADD all 95
 
 HSET producto:96 marca "Sed Hendrerit A Corporation" nombre "manager" descripcion "lacus. Aliquam rutrum" precio 772.54 stock 818
 LPUSH "marca:Sed Hendrerit A Corporation" 96
-LPUSH all 96
+SADD all 96
 
 HSET producto:97 marca "Dictum Cursus Inc." nombre "beverages" descripcion "orci. Ut semper" precio 688.83 stock 871
 LPUSH "marca:Dictum Cursus Inc." 97
-LPUSH all 97
+SADD all 97
 
 HSET producto:98 marca "In Ornare Sagittis Corporation" nombre "barcode" descripcion "hendrerit id, ante." precio 791.67 stock 437
 LPUSH "marca:In Ornare Sagittis Corporation" 98
-LPUSH all 98
+SADD all 98
 
 HSET producto:99 marca "Fringilla Porttitor Vulputate Corporation" nombre "cash only" descripcion "consectetuer adipiscing elit." precio 2.14 stock 12
 LPUSH "marca:Fringilla Porttitor Vulputate Corporation" 99
-LPUSH all 99
+SADD all 99
 
 HSET producto:100 marca "Porttitor Interdum PC" nombre " drugstore " descripcion "molestie in, tempus" precio 814.7 stock 587
 LPUSH "marca:Porttitor Interdum PC" 100
-LPUSH all 100
+SADD all 100
