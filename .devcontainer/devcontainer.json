@@ -1,0 +1,22 @@
+{
+    "name": "Node.js with MongoDB and Redis",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "app",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            },
+            "extensions": [
+                "mongodb.mongodb-vscode",
+                "redis.redis-for-vscode",
+                "editorconfig.editorconfig"
+            ]
+        }
+    },
+    "forwardPorts": [
+        5000
+    ],
+    "postCreateCommand": ".devcontainer/populate.sh"
+}
