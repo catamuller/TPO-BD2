@@ -1,7 +1,7 @@
 // @ts-nocheck
 /* global use, db */
 
-db.cliente.createIndex({ "telefonos.codigo_area": 1, "telefonos.nro_telefono": 1 }, { unique: true });
+db.cliente.createIndex({ "telefonos.codigo_area": 1, "telefonos.nro_telefono": 1 }, { unique: true, sparse: true });
 
 db.cliente.insertOne({
 	_id: 1,
