@@ -22,5 +22,5 @@
     "forwardPorts": [
         5000
     ],
-    "postCreateCommand": ".devcontainer/populate.sh"
+    "postCreateCommand": ".devcontainer/populate.sh && npm i"
 }
