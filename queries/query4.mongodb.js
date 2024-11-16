@@ -1,1 +1,3 @@
-db.factura.distinct("nro_cliente");
+const result = db.factura.distinct("nro_cliente");
+
+printjson(result);

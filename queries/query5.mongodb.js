@@ -1,4 +1,4 @@
-db.cliente.find(
+const result = db.cliente.find(
     {
         _id: {
             $nin: db.factura.distinct("nro_cliente")
@@ -33,3 +33,5 @@ db.cliente.aggregate([
         }
     }
 ]);
+
+printjson(result.toArray());

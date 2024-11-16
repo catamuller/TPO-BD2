@@ -1,4 +1,4 @@
-db.cliente.aggregate([
+const result = db.cliente.aggregate([
     {
         $match: {
             nombre: "Jacob",
@@ -15,3 +15,5 @@ db.cliente.aggregate([
         }
     }
 ]);
+
+printjson(result.toArray());

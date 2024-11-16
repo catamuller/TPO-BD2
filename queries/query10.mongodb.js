@@ -1,4 +1,4 @@
-db.factura.aggregate([
+const result = db.factura.aggregate([
     {
         $lookup: {
             from: "cliente",
@@ -27,3 +27,5 @@ db.factura.aggregate([
         }
     }
 ]);
+
+printjson(result.toArray());

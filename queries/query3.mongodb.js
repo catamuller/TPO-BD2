@@ -1,4 +1,4 @@
-db.cliente.aggregate([
+const result = db.cliente.aggregate([
     { $unwind: "$telefonos" },
     {
         $project: {
@@ -13,3 +13,5 @@ db.cliente.aggregate([
         }
     }
 ]);
+
+printjson(result.toArray());

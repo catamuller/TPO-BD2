@@ -1,4 +1,4 @@
-db.factura
+const result = db.factura
     .aggregate([
         {
             $group: {
@@ -15,3 +15,5 @@ db.factura
         }
     ])
     .sort({ nro_cliente: 1 });
+
+printjson(result.toArray());
