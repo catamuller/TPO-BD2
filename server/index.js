@@ -1,6 +1,7 @@
 import express from "express";
 import mongoExecute from "./mongo.js";
 import { createClient } from "redis";
+import { MongoClient } from "mongodb";
 
 const app = express();
 app.use(express.static("public"));
@@ -8,6 +9,8 @@ app.use(express.static("public"));
 const redis = createClient({
     url: "redis://redis:6379"
 });
+
+const mongo = new MongoClient("mongodb://mongo:27017");
 
 app.get("/", (req, res) => {
     res.sendFile("/public/index.html", { root: import.meta.dirname });
