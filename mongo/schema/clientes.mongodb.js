@@ -1,6 +1,8 @@
 // @ts-nocheck
 /* global use, db */
 
+use("facturacion");
+
 db.cliente.createIndex(
     { "telefonos.codigo_area": 1, "telefonos.nro_telefono": 1 },
     { unique: true, sparse: true }
