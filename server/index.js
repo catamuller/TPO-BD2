@@ -13,9 +13,11 @@ app.get("/", (req, res) => {
     res.sendFile("/public/index.html", { root: import.meta.dirname });
 });
 
-app.get("/debugger", (req, res) => {
-    res.send(import.meta.dirname);
+app.get("/debugger", async (req, res) => {
+    redis.connect();
+    res.send(await redis.keys("marca:*"));
     res.end();
+    redis.quit();
 });
 
 app.get("/:n", async (req, res) => {
