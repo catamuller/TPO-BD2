@@ -15,6 +15,7 @@ import query11 from "../queries/query11.js";
 
 const app = express();
 app.use(express.static("public"));
+app.use(express.json());
 
 const redis = createClient({
     url: "redis://redis:6379"
@@ -55,6 +56,38 @@ app.get("/:n", async (req, res) => {
         console.error(error);
         res.status(500).send(error);
     }
+});
+
+app.post("/product", async (req, res) => {
+    /**
+     * @typedef {Object} Product
+     * @property {number} id
+     * @property {string} name
+     * @property {string} brand
+     * @property {string} description
+     * @property {number} price
+     * @property {number} stock
+     */
+    /**
+     * @type {Product}
+     */
+    const body = req.body;
+
+    console.log(body);
+
+    await redis.connect();
+    await redis.hSet(`producto:${body.id}`, {
+        name: body.name,
+        brand: body.brand,
+        description: body.description,
+        price: body.price,
+        stock: body.stock
+    });
+    await redis.sAdd(`marca:${body.brand}`, `${body.id}`);
+    await redis.sAdd("all", `${body.id}`);
+    await redis.quit();
+
+    res.status(201).send("Product added successfully");
 });
 
 app.listen(3000, () => {
