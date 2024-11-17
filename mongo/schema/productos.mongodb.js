@@ -3,6 +3,31 @@
 
 use("facturacion");
 
+db.createView("productos_no_facturados", "producto", [
+    {
+        $lookup: {
+            from: "factura",
+            localField: "_id",
+            foreignField: "detalle.codigo_producto",
+            as: "factura"
+        }
+    },
+    {
+        $match: {
+            factura: { $size: 0 }
+        }
+    },
+    {
+        $project: {
+            _id: 0,
+            codigo_producto: "$_id",
+            marca: 1,
+            nombre: 1,
+            descripcion: 1
+        }
+    }
+]);
+
 db.producto.insertOne({
     _id: 1,
     marca: "Dolor Sit Incorporated",
