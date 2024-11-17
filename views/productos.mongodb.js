@@ -1,17 +1,32 @@
-// Se necesita una vista que devuelva todos los productos que aún no han sido facturados.
-// todo: testear
+/**
+ * @param {import("mongodb").MongoClient} mongo
+ * @param {ReturnType<import("redis").createClient>} redis
+ * @returns The data
+ */
 
-import getProducts from "../redis/functions";
+export default async function query12(mongo, redis) {
+    try {
+        redis.connect();
 
-export default async function ( mongo, redis ) {
+        const db = mongo.db("facturacion");
+        const factura = db.collection("factura");
 
-    const factura = mongo.collection("factura");
+        const codigo_productos = await redis.sMembers("all");
+        const codigo_productos_facturados = await factura.distinct(
+            "detalle.codigo_producto"
+        );
 
-    const codigo_productos = await redis.keys("product:*");
-    const codigo_productos_facturados = factura.distinct("detalle.codigo_producto");
+        const result = codigo_productos.filter(
+            (x) => !codigo_productos_facturados.includes(parseInt(x))
+        );
 
-    const result = codigo_productos.filter(x => !codigo_productos_facturados.includes( parseInt(x.split(":")[1], 10) ));
+        const productList = [];
+        for (let productCode of result) {
+            productList.push(await redis.hGetAll("producto:" + productCode));
+        }
 
-    return await getProducts(result);
-
+        return productList;
+    } finally {
+        redis.quit();
+    }
 }

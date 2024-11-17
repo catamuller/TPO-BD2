@@ -17,7 +17,7 @@ export default async function query9(mongo, redis) {
 
         console.log(productIds);
 
-        const database = mongo.db("test");
+        const database = mongo.db("facturacion");
         const factura = database.collection("factura");
 
         return factura

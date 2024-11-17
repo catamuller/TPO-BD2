@@ -5,5 +5,3 @@ db.createView("facturas_por_fecha", "factura", [
         }
     }
 ]);
-
-db.facturas_por_fecha.find();
