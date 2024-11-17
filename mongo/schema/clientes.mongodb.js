@@ -8,6 +8,8 @@ db.cliente.createIndex(
     { unique: true, sparse: true }
 );
 
+db.cliente.createIndex({ nombre: 1, apellido: 1 });
+
 db.cliente.insertOne({
     _id: 1,
     nombre: "Xerxes",
