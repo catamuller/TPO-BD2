@@ -14,7 +14,7 @@ export default async function query8(mongo, redis) {
         let productos = await producto
             .find({
                 _id: {
-                    $in: await factura.distinct("productos.codigo")
+                    $in: await factura.distinct("detalle.codigo_producto")
                 }
             })
             .toArray();
