@@ -38,7 +38,7 @@ const queries = {
     9: () => query9(mongo),
     10: () => query10(mongo.db("facturacion")),
     11: () => query11(mongo.db("facturacion")),
-    12: () => query12(mongo, redis)
+    12: () => query12(mongo.db("facturacion"))
 };
 
 app.get("/", (req, res) => {

@@ -1,31 +1,9 @@
 /**
- * @param {import("mongodb").MongoClient} mongo
- * @param {ReturnType<import("redis").createClient>} redis
+ * @param {ReturnType<import("mongodb").MongoClient["db"]>} db Mongo database
  * @returns The data
  */
-export default async function query12(mongo, redis) {
-    try {
-        redis.connect();
+export default async function query12(db) {
+    const productos_no_facturados = db.collection("productos_no_facturados");
 
-        const db = mongo.db("facturacion");
-        const factura = db.collection("factura");
-
-        const codigo_productos = await redis.sMembers("all");
-        const codigo_productos_facturados = await factura.distinct(
-            "detalle.codigo_producto"
-        );
-
-        const result = codigo_productos.filter(
-            (x) => !codigo_productos_facturados.includes(parseInt(x))
-        );
-
-        const productList = [];
-        for (let productCode of result) {
-            productList.push(await redis.hGetAll("producto:" + productCode));
-        }
-
-        return productList;
-    } finally {
-        redis.quit();
-    }
+    return productos_no_facturados.find().toArray();
 }
