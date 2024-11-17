@@ -12,8 +12,8 @@ import query8 from "../queries/query8.js";
 import query9 from "../queries/query9.js";
 import query10 from "../queries/query10.js";
 import query11 from "../queries/query11.js";
+import query12 from "../queries/query12.js";
 import query14 from "../queries/query14.js";
-import query12 from "../views/productos.mongodb.js";
 
 const app = express();
 app.use(express.static("public"));

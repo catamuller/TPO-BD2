@@ -3,7 +3,6 @@
  * @param {ReturnType<import("redis").createClient>} redis
  * @returns The data
  */
-
 export default async function query12(mongo, redis) {
     try {
         redis.connect();
