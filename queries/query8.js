@@ -9,15 +9,24 @@ export default async function query8(mongo, redis) {
 
         const database = mongo.db("facturacion");
         const factura = database.collection("factura");
+        const producto = database.collection("producto");
 
-        const productos = await factura.distinct("detalle.codigo_producto");
+        let productos = await producto
+            .find({
+                _id: {
+                    $in: await factura.distinct("productos.codigo")
+                }
+            })
+            .toArray();
 
-        let productList = [];
-        for (let productcode of productos) {
-            productList.push(await redis.hGetAll(`producto:${productcode}`));
+        for (let i = 0; i < productos.length; i++) {
+            productos[i] = {
+                ...productos[i],
+                ...(await redis.hGetAll(`producto:${productos[i]._id}`))
+            };
         }
 
-        return productList;
+        return productos;
     } finally {
         redis.quit();
     }
