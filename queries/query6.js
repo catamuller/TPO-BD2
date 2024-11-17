@@ -1,3 +1,7 @@
+/**
+ * @param {ReturnType<import("mongodb").MongoClient["db"]>} db Mongo database
+ * @returns The data
+ */
 export default async function query6(db) {
     const factura = db.collection("factura");
 
@@ -17,5 +21,6 @@ export default async function query6(db) {
                 }
             }
         ])
-        .sort({ nro_cliente: 1 });
+        .sort({ nro_cliente: 1 })
+        .toArray();
 }
