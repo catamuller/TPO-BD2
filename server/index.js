@@ -12,6 +12,7 @@ import query8 from "../queries/query8.js";
 import query9 from "../queries/query9.js";
 import query10 from "../queries/query10.js";
 import query11 from "../queries/query11.js";
+import query14 from "../queries/query14.js";
 
 const app = express();
 app.use(express.static("public"));
@@ -48,6 +49,10 @@ app.get("/debugger", async (req, res) => {
     redis.quit();
 });
 
+app.get("/product", (req, res) => {
+    res.sendFile("/public/product.html", { root: import.meta.dirname });
+});
+
 app.get("/:n", async (req, res) => {
     try {
         const data = (await queries[req.params.n]?.()) ?? "Query not found";
@@ -59,35 +64,50 @@ app.get("/:n", async (req, res) => {
 });
 
 app.post("/product", async (req, res) => {
-    /**
-     * @typedef {Object} Product
-     * @property {number} id
-     * @property {string} name
-     * @property {string} brand
-     * @property {string} description
-     * @property {number} price
-     * @property {number} stock
-     */
-    /**
-     * @type {Product}
-     */
     const body = req.body;
 
-    console.log(body);
+    if (typeof body.id !== "number" || body.id < 0) {
+        res.status(400).send("Invalid id");
+        return;
+    }
 
-    await redis.connect();
-    await redis.hSet(`producto:${body.id}`, {
-        name: body.name,
-        brand: body.brand,
-        description: body.description,
-        price: body.price,
-        stock: body.stock
-    });
-    await redis.sAdd(`marca:${body.brand}`, `${body.id}`);
-    await redis.sAdd("all", `${body.id}`);
-    await redis.quit();
+    if (typeof body.name !== "string" || !body.name) {
+        res.status(400).send("Invalid name");
+        return;
+    }
 
-    res.status(201).send("Product added successfully");
+    if (typeof body.brand !== "string" || !body.brand) {
+        res.status(400).send("Invalid brand");
+        return;
+    }
+
+    if (typeof body.description !== "string" || !body.description) {
+        res.status(400).send("Invalid description");
+        return;
+    }
+
+    if (typeof body.price !== "number" || body.price < 0) {
+        res.status(400).send("Invalid price");
+        return;
+    }
+
+    if (typeof body.stock !== "number" || body.stock < 0) {
+        res.status(400).send("Invalid stock");
+        return;
+    }
+
+    try {
+        const insert = await query14(redis, body);
+
+        res.status(201).send(
+            insert
+                ? "Product added successfully"
+                : "Product updated successfully"
+        );
+    } catch (error) {
+        console.error(error);
+        res.send(error).status(500);
+    }
 });
 
 app.listen(3000, () => {

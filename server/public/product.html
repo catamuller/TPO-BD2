@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Add or update product</title>
+    </head>
+    <body>
+        <form
+            onsubmit="submit"
+            style="display: flex; flex-direction: column; width: 25%"
+        >
+            <label for="id">ID</label>
+            <input id="id" type="number" />
+            <label for="name">Nombre</label>
+            <input id="name" type="text" />
+            <label for="brand">Marca</label>
+            <input id="brand" type="text" />
+            <label for="description">Descripción</label>
+            <input id="description" type="text" />
+            <label for="price">Precio</label>
+            <input id="price" type="number" />
+            <label for="stock">Stock</label>
+            <input id="stock" type="number" />
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="status"></p>
+    </body>
+    <script>
+        function submit(event) {
+            event.preventDefault();
+
+            const id = parseInt(document.getElementById("id").value);
+            const name = document.getElementById("name").value;
+            const brand = document.getElementById("brand").value;
+            const description = document.getElementById("description").value;
+            const price = parseInt(document.getElementById("price").value);
+            const stock = parseInt(document.getElementById("stock").value);
+
+            (async () => {
+                const response = await fetch("/product", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        id,
+                        name,
+                        brand,
+                        description,
+                        price,
+                        stock
+                    })
+                });
+
+                const data = await response.text();
+                document.getElementById("status").innerText = data;
+            })();
+        }
+
+        document.querySelector("form").addEventListener("submit", submit);
+    </script>
+</html>
