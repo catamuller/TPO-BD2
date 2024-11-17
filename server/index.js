@@ -1,5 +1,4 @@
 import express from "express";
-import mongoExecute from "./mongo.js";
 import { createClient } from "redis";
 import { MongoClient } from "mongodb";
 
@@ -26,8 +25,8 @@ app.get("/debugger", async (req, res) => {
 app.get("/:n", async (req, res) => {
     try {
         const n = parseInt(req.params.n);
-        const data = await mongoExecute(n);
-        res.send(data).status(200);
+        // const data = await mongoExecute(n);
+        res.send("data").status(200);
     } catch (error) {
         res.status(500).send(error);
     }
