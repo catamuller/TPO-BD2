@@ -13,6 +13,7 @@ import query9 from "../queries/query9.js";
 import query10 from "../queries/query10.js";
 import query11 from "../queries/query11.js";
 import query12 from "../queries/query12.js";
+import query13 from "../queries/query13.js";
 import query14 from "../queries/query14.js";
 
 const app = express();
@@ -53,6 +54,10 @@ app.get("/debugger", async (req, res) => {
 
 app.get("/product", (req, res) => {
     res.sendFile("/public/product.html", { root: import.meta.dirname });
+});
+
+app.get("/client", (req, res) => {
+    res.sendFile("/public/client.html", { root: import.meta.dirname });
 });
 
 app.get("/:n", async (req, res) => {
@@ -106,6 +111,52 @@ app.post("/product", async (req, res) => {
                 ? "Product added successfully"
                 : "Product updated successfully"
         );
+    } catch (error) {
+        console.error(error);
+        res.send(error).status(500);
+    }
+});
+
+app.post("/client", async (req, res) => {
+    const body = req.body;
+
+    if (typeof body.id !== "number" || body.id < 0) {
+        res.status(400).send("Invalid id");
+        return;
+    }
+
+    if (typeof body.name !== "string" || !body.name) {
+        res.status(400).send("Invalid name");
+        return;
+    }
+
+    if (typeof body.surname !== "string" || !body.surname) {
+        res.status(400).send("Invalid surname");
+        return;
+    }
+
+    if (typeof body.address !== "string" || !body.address) {
+        res.status(400).send("Invalid address");
+        return;
+    }
+
+    if (typeof body.active !== "number" || body.active < 0) {
+        res.status(400).send("Invalid active number");
+        return;
+    }
+
+    try {
+        const insert = await query13(mongo.db("facturacion"), body);
+
+        if (body.action === "upsert") {
+            res.send(
+                insert
+                    ? "Client added successfully"
+                    : "Client updated successfully"
+            ).status(201);
+        } else if (body.action === "delete") {
+            res.send("Client deleted successfully").status(200);
+        }
     } catch (error) {
         console.error(error);
         res.send(error).status(500);
