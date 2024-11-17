@@ -63,7 +63,7 @@ app.get("/client", (req, res) => {
 app.get("/:n", async (req, res) => {
     try {
         const data = (await queries[req.params.n]?.()) ?? "Query not found";
-        res.send(data).status(200);
+        res.status(200).send(data);
     } catch (error) {
         console.error(error);
         res.status(500).send(error);
@@ -113,7 +113,7 @@ app.post("/product", async (req, res) => {
         );
     } catch (error) {
         console.error(error);
-        res.send(error).status(500);
+        res.status(500).send(error);
     }
 });
 
@@ -148,12 +148,12 @@ app.post("/client", async (req, res) => {
     try {
         const insert = await query13.upsert(mongo.db("facturacion"), body);
 
-        res.send(
+        res.status(201).send(
             insert ? "Client added successfully" : "Client updated successfully"
-        ).status(201);
+        );
     } catch (error) {
         console.error(error);
-        res.send(error).status(500);
+        res.status(500).send(error);
     }
 });
 
@@ -169,13 +169,13 @@ app.delete("/client/:id", async (req, res) => {
         const deleted = await query13.remove(mongo.db("facturacion"), id);
 
         if (deleted) {
-            res.send("Client deleted successfully").status(200);
+            res.status(200).send("Client deleted successfully");
         } else {
-            res.send("Client not found").status(404);
+            res.status(404).send("Client not found");
         }
     } catch (error) {
         console.error(error);
-        res.send(error).status(500);
+        res.status(500).send(error);
     }
 });
 
