@@ -13,7 +13,7 @@ import query9 from "../queries/query9.js";
 import query10 from "../queries/query10.js";
 import query11 from "../queries/query11.js";
 import query12 from "../queries/query12.js";
-import query13 from "../queries/query13.js";
+import * as query13 from "../queries/query13.js";
 import query14 from "../queries/query14.js";
 
 const app = express();
@@ -146,16 +146,32 @@ app.post("/client", async (req, res) => {
     }
 
     try {
-        const insert = await query13(mongo.db("facturacion"), body);
+        const insert = await query13.upsert(mongo.db("facturacion"), body);
 
-        if (body.action === "upsert") {
-            res.send(
-                insert
-                    ? "Client added successfully"
-                    : "Client updated successfully"
-            ).status(201);
-        } else if (body.action === "delete") {
+        res.send(
+            insert ? "Client added successfully" : "Client updated successfully"
+        ).status(201);
+    } catch (error) {
+        console.error(error);
+        res.send(error).status(500);
+    }
+});
+
+app.delete("/client/:id", async (req, res) => {
+    const id = parseInt(req.params.id);
+
+    if (isNaN(id) || id < 0) {
+        res.status(400).send("Invalid id");
+        return;
+    }
+
+    try {
+        const deleted = await query13.remove(mongo.db("facturacion"), id);
+
+        if (deleted) {
             res.send("Client deleted successfully").status(200);
+        } else {
+            res.send("Client not found").status(404);
         }
     } catch (error) {
         console.error(error);

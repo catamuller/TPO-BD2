@@ -6,78 +6,82 @@
         <title>Add, update, or delete a client</title>
     </head>
     <body>
-        <form
-            onsubmit="submit"
-            style="display: flex; flex-direction: column; width: 25%"
-        >
-            <label for="id">Nro de Cliente</label>
-            <input id="id" type="number" />
-            <label for="name">Nombre</label>
-            <input id="name" type="text" />
-            <label for="surname">Apellido</label>
-            <input id="surname" type="text" />
-            <label for="address">Dirección</label>
-            <input id="address" type="text" />
-            <label for="active">Activo</label>
-            <input id="active" type="number" />
+        <div style="display: flex; gap: 8rem">
+            <div
+                id="upsert"
+                style="display: flex; flex-direction: column; width: 25%"
+            >
+                <label for="id">Nro de Cliente</label>
+                <input id="id" type="number" />
+                <label for="name">Nombre</label>
+                <input id="name" type="text" />
+                <label for="surname">Apellido</label>
+                <input id="surname" type="text" />
+                <label for="address">Dirección</label>
+                <input id="address" type="text" />
+                <label for="active">Activo</label>
+                <input id="active" type="number" />
 
-            <button type="submit" id="formType" value="upsert">
-                Agregar o Actualizar Cliente
-            </button>
-            <button type="submit" id="formType" value="delete">
-                Eliminar Cliente
-            </button>
-        </form>
+                <button type="button" onclick="upsert()">
+                    Agregar o Actualizar Cliente
+                </button>
+            </div>
+            <div
+                id="remove"
+                style="display: flex; flex-direction: column; width: 25%"
+            >
+                <label for="id">Nro de Cliente</label>
+                <input id="id" type="number" />
+
+                <button type="button" onclick="remove()">
+                    Eliminar Cliente
+                </button>
+            </div>
+        </div>
         <p id="status"></p>
     </body>
     <script>
-        function submit(event) {
-            event.preventDefault();
+        function upsert() {
+            const id = parseInt(document.querySelector("#upsert #id").value);
+            const name = document.querySelector("#upsert #name").value;
+            const surname = document.querySelector("#upsert #surname").value;
+            const address = document.querySelector("#upsert #address").value;
+            const active = parseInt(
+                document.querySelector("#upsert #active").value
+            );
 
-            const id = parseInt(document.getElementById("id").value);
-            const name = document.getElementById("name").value;
-            const surname = document.getElementById("surname").value;
-            const address = document.getElementById("address").value;
-            const active = parseInt(document.getElementById("active").value);
-            const action = document.getElementById("formType").value;
+            (async () => {
+                console.log(id, name, surname, address, active);
+                const response = await fetch("/client", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        id,
+                        name,
+                        surname,
+                        address,
+                        active
+                    })
+                });
 
-            (async (value) => {
-                if (value === "upsert") {
-                    const response = await fetch("/client", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            id,
-                            name,
-                            surname,
-                            address,
-                            active,
-                            action
-                        })
-                    });
-
-                    const data = await response.text();
-                    document.getElementById("status").innerText = data;
-                } else if (value === "delete") {
-                    const response = await fetch("/client", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            id,
-                            action
-                        })
-                    });
-
-                    const data = await response.text();
-                    document.getElementById("status").innerText = data;
-                }
+                const data = await response?.text();
+                document.getElementById("status").innerText = data;
             })();
         }
 
-        document.querySelector("form").addEventListener("submit", submit);
+        function remove() {
+            const id = parseInt(document.querySelector("#remove #id").value);
+
+            (async () => {
+                const response = await fetch(`/client/${id}`, {
+                    method: "DELETE"
+                });
+
+                const data = await response?.text();
+                document.getElementById("status").innerText = data;
+            })();
+        }
     </script>
 </html>
