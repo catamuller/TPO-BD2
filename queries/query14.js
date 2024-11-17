@@ -9,32 +9,43 @@
  */
 
 /**
+ * @param {import("mongodb").MongoClient} mongo
  * @param {ReturnType<import("redis").createClient>} redis
  * @param {Product} body The data
  * @return {Promise<boolean>} True if inserted, false if updated
  */
-export default async function query14(redis, body) {
+export default async function query14(mongo, redis, body) {
     try {
         await redis.connect();
 
-        const before = await redis.hGetAll(`producto:${body.id}`);
+        const existed = await redis.exists(`producto:${body.id}`);
 
         await redis.hSet(`producto:${body.id}`, {
-            name: body.name,
-            brand: body.brand,
-            description: body.description,
             price: body.price,
             stock: body.stock
         });
 
-        await redis.sAdd(`marca:${body.brand}`, `${body.id}`);
-        await redis.sAdd("all", `${body.id}`);
+        const database = mongo.db("facturacion");
+        const producto = database.collection("producto");
 
-        if (before.brand && body.brand !== before.brand) {
-            await redis.sRem(`marca:${before.brand}`, `${body.id}`);
-        }
+        await producto.updateOne(
+            {
+                // @ts-ignore
+                _id: body.id
+            },
+            {
+                $set: {
+                    nombre: body.name,
+                    marca: body.brand,
+                    descripcion: body.description
+                }
+            },
+            {
+                upsert: true
+            }
+        );
 
-        return !before.name;
+        return !existed;
     } finally {
         await redis.quit();
     }

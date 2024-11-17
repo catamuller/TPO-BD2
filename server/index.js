@@ -34,7 +34,7 @@ const queries = {
     6: () => query6(mongo.db("facturacion")),
     7: () => query7(mongo.db("facturacion")),
     8: () => query8(mongo, redis),
-    9: () => query9(mongo, redis),
+    9: () => query9(mongo),
     10: () => query10(mongo.db("facturacion")),
     11: () => query11(mongo.db("facturacion")),
     12: () => query12(mongo, redis)
@@ -99,7 +99,7 @@ app.post("/product", async (req, res) => {
     }
 
     try {
-        const insert = await query14(redis, body);
+        const insert = await query14(mongo, redis, body);
 
         res.status(201).send(
             insert
