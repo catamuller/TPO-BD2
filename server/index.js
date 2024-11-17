@@ -11,6 +11,7 @@ import query7 from "../queries/query7.js";
 import query8 from "../queries/query8.js";
 import query9 from "../queries/query9.js";
 import query10 from "../queries/query10.js";
+import query11 from "../queries/query11.js";
 
 const app = express();
 app.use(express.static("public"));
@@ -31,7 +32,8 @@ const queries = {
     7: () => query7(mongo.db("facturacion")),
     8: () => query8(mongo, redis),
     9: () => query9(mongo, redis),
-    10: () => query10(mongo.db("facturacion"))
+    10: () => query10(mongo.db("facturacion")),
+    11: () => query11(mongo.db("facturacion"))
 };
 
 app.get("/", (req, res) => {

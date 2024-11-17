@@ -24,6 +24,7 @@ export default async function query9(mongo, redis) {
             .find(
                 {
                     "detalle.codigo_producto": { $in: productIds }
+                    /*detalle: { $elemMatch: { product: { $in: productIds } } }*/
                 },
                 {
                     // @ts-ignore

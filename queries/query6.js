@@ -3,20 +3,22 @@
  * @returns The data
  */
 export default async function query6(db) {
-    const factura = db.collection("factura");
+    const cliente = db.collection("cliente");
 
-    return factura
+    return cliente
         .aggregate([
             {
-                $group: {
-                    _id: "$nro_cliente",
-                    total_facturas: { $count: {} }
+                $lookup: {
+                    from: "factura",
+                    localField: "_id",
+                    foreignField: "nro_cliente",
+                    as: "facturas"
                 }
             },
             {
                 $project: {
                     nro_cliente: "$_id",
-                    total_facturas: 1,
+                    total_facturas: { $size: "$facturas" },
                     _id: 0
                 }
             }

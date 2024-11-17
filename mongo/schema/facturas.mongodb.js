@@ -3,6 +3,26 @@
 
 use("facturacion");
 
+db.createView("facturas_por_fecha", "factura", [
+    {
+        $sort: {
+            fecha: 1
+        }
+    },
+    {
+        $project: {
+            _id: 0,
+            nro_factura: "$_id",
+            fecha: 1,
+            total_sin_iva: 1,
+            iva: 1,
+            total_con_iva: 1,
+            nro_cliente: 1,
+            detalle: 1
+        }
+    }
+]);
+
 db.factura.insertOne({
     _id: 1,
     fecha: "2016-05-28",
