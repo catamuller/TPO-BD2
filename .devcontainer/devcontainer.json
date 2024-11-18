@@ -20,7 +20,11 @@
         }
     },
     "forwardPorts": [
-        5000
+        3000
     ],
-    "postCreateCommand": ".devcontainer/populate.sh && npm i"
+    "postCreateCommand": {
+        "populate": "bash .devcontainer/populate.sh",
+        "npm": "npm i"
+    },
+    "postStartCommand": "nohup bash -c 'node . &'"
 }

@@ -7,7 +7,7 @@ services:
     volumes:
       - ../..:/workspaces:cached
     ports:
-      - "5000:5000"
+      - "3000:3000"
     command: sleep infinity
     environment:
       - REDIS_HOST=redis
