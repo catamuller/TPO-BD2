@@ -12,15 +12,15 @@
                 style="display: flex; flex-direction: column; width: 25%"
             >
                 <label for="id">Nro de Cliente</label>
-                <input id="id" type="number" />
+                <input id="id" type="number" required />
                 <label for="name">Nombre</label>
-                <input id="name" type="text" />
+                <input id="name" type="text" required />
                 <label for="surname">Apellido</label>
-                <input id="surname" type="text" />
+                <input id="surname" type="text" required />
                 <label for="address">Dirección</label>
-                <input id="address" type="text" />
+                <input id="address" type="text" required />
                 <label for="active">Activo</label>
-                <input id="active" type="number" />
+                <input id="active" type="number" required />
 
                 <button type="button" onclick="upsert()">
                     Agregar o Actualizar Cliente
@@ -31,7 +31,7 @@
                 style="display: flex; flex-direction: column; width: 25%"
             >
                 <label for="id">Nro de Cliente</label>
-                <input id="id" type="number" />
+                <input id="id" type="number" required />
 
                 <button type="button" onclick="remove()">
                     Eliminar Cliente
